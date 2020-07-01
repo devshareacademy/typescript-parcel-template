@@ -1,15 +1,14 @@
 module.exports = {
-  env: {
-    browser: true,
-    node: true,
-  },
   root: true,
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   plugins: [
     '@typescript-eslint',
   ],
   extends: [
-    'airbnb-base',
+    'airbnb-typescript/base',
   ],
   settings: {
     'import/resolver': {
@@ -34,14 +33,5 @@ module.exports = {
       'always',
       { exceptAfterSingleLine: true },
     ],
-    'no-param-reassign': 'off',
   },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      rules: {
-        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
-      },
-    },
-  ],
 };
